@@ -1,5 +1,5 @@
 # Docker Alura
-Aplicação de conteúdo estudado em curso [Docker: Criando containers sem dor de cabeça](https://cursos.alura.com.br/course/docker-e-docker-compose) da Alura.
+Aplicação de conteúdo estudado em curso [Docker: Criando containers sem dor de cabeça](https://cursos.alura.com.br/course/docker-e-docker-compose) da Alura, e alguns conteúdos extra do Alura+.
 
 
 # Comandos aplicados em curso
@@ -23,6 +23,7 @@ docker start [-a] [-i] <container_id>
 docker stop [-t <timeout_secs>] <container_id>
 docker rm <container_id>
 docker container prune [-f]
+docker container ls [-a] [-s]
 docker images
 docker rmi
 docker port <container_id>
@@ -36,6 +37,7 @@ docker network create --driver bridge <network_alias>
 docker network ls
 docker network inspect <network_alias>
 docker exec [-it] <container_id> <command>
+docker history <image_name>
 
 docker-compose build
 docker-compose up [-d]

@@ -11,8 +11,10 @@ docker run \
     [-p <port_host>:<port_container>] \ # map ports
     [--name <custom_name>] \ # custom container name
     [-e <env_var_name>=<env_var_value>] \ # env vars
-    [-v <volume_dir_container>] \ # mount volume (host dir random)
-    [-v <volume_dir_host>:<volume_dir_container>] \ # mount volume
+    [-v <volume_dir_container>] \ # mount volume (create a random volume) - see --mount flag
+    [-v <volume_dir_host>:<dir_container>] \ # mount volume (bind mount)
+    [-v <volume_name>:<dir_container>] \ # mount volume (existing volume)
+    [--tmpfs <dir_container>] # volatile volume (stored in the host RAM)
     [-w <working_dir>] \ # set working dir
     [--network <network_alias>] \ # set a network to the container
     <image>[:<image_version>] \ # image name
@@ -38,6 +40,10 @@ docker network ls
 docker network inspect <network_alias>
 docker exec [-it] <container_id> <command>
 docker history <image_name>
+docker volume ls
+docker volume inspect <volume_name>
+docker volume rm <volume_name>
+docker volume create <volume_name>
 
 docker-compose build
 docker-compose up [-d]

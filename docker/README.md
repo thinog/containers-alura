@@ -4,7 +4,7 @@ Aplicação de conteúdo estudado em curso [Docker: Criando containers sem dor d
 
 # Comandos aplicados em curso
 ```bash
-docker run \
+docker run \ # Run a container
     [-it] \ # attach to container
     [-d] \ # detach
     [-P] \ # map ports randomly
@@ -20,36 +20,36 @@ docker run \
     <image>[:<image_version>] \ # image name
     [<command>] # command to execute in the container
 
-docker ps [-a] [-q]
-docker start [-a] [-i] <container_id>
-docker stop [-t <timeout_secs>] <container_id>
-docker rm <container_id>
-docker container prune [-f]
-docker container ls [-a] [-s]
-docker images
-docker rmi
-docker port <container_id>
-docker inspect <container_id>
-docker build [-f <dockerfile_path>] [--no-cache] [-t <image_name>] <dir>
-docker login
-docker logout
-docker push <image_name>
-docker pull <image_name>
-docker network create --driver bridge <network_alias>
-docker network ls
-docker network inspect <network_alias>
-docker exec [-it] <container_id> <command>
-docker history <image_name>
-docker volume ls
-docker volume inspect <volume_name>
-docker volume rm <volume_name>
-docker volume create <volume_name>
+docker ps [-a] [-q] # List docker processes
+docker start [-a] [-i] <container_id> # Start a container
+docker stop [-t <timeout_secs>] <container_id> # Stop a container
+docker rm  [-f] <container_id> # Delete a container
+docker container prune [-f] # Remove all unused containers
+docker container ls [-a] [-s] # List containers
+docker images # List local images
+docker rmi # Delete a image
+docker port <container_id> # Check port bindings of a container
+docker inspect <container_id> # Inspect a container
+docker build [-f <dockerfile_path>] [--no-cache] [-t <image_name>] <dir> # Build a dockerfile
+docker login # Sign in docker hub
+docker logout # Sign out docker hub
+docker push <image_name> # Push a container to docker hub
+docker pull <image_name> # Pull a container from docker hub
+docker network create --driver bridge <network_alias> # Create a new docker network
+docker network ls # List docker networks
+docker network inspect <network_alias> # Inspect a docker network
+docker exec [-it] <container_id> <command> # Execute commands inside a container
+docker history <image_name> # Check layers of a image
+docker volume ls # List docker volumes
+docker volume inspect <volume_name> # Inspect a docker volume
+docker volume rm <volume_name> # Delete a docker volume
+docker volume create <volume_name> # Create a new docker volume
 
-docker-compose build
-docker-compose up [-d]
-docker-compose ps
-docker-compose down
-docker-compose restart
+docker-compose build # Build services from a docker-compose file
+docker-compose up [-d] # Run services from a docker-compose file
+docker-compose ps # List active docker-compose containers
+docker-compose down # Kill active docker-compose containers
+docker-compose restart # Restart docker-compose containers
 ```
 
 ## Imagens utilizadas

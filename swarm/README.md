@@ -18,6 +18,7 @@ docker swarm init [--force-new-cluster] --advertise-addr <swarm_manager_ip> # Cr
 docker swarm join-token <node_type(worker|manager)> # Get the join token of a cluster
 docker swarm join --token <join_token> <swarm_manager_ip>:<swarm_manager_port> # Join into a swarm cluster
 docker swarm leave # Leave the current cluster
+
 docker node ls [--format <format_settings>] # List cluster nodes. Runs only from a manage r node
 docker node rm <node_name> # Delete a node from the cluster. Runs only from a manager node
 docker node inspect <node_name> # Inspect a cluster node
@@ -26,6 +27,7 @@ docker node update \ # Update node settings
     [--availability <node_new_availability (active|pause|drain)>] \
     [--role <node_new_role (manager|worker)>] \
     <node_name> 
+
 docker service create \ # Run a service into the cluster
     [-p <host_port>:<container_port>] \
     [--mode <running_mode (replicated|global)>] \
@@ -42,6 +44,7 @@ docker service update \ # Update service settings
     [--replicas <total_of_replicas>] \
     <service_id> 
 docker service scale <service_id>=<total_of_replicas> # Scale the number of instances of a service
+
 docker stack deploy --compose-file <compose_file_path> <stack_name> # Create a new stack of containers
 docker stack ls # List all active stacks
 docker stack rm <stack_rm> # Remove a stack

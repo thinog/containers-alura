@@ -19,13 +19,10 @@ docker run \ # Run a container
     [--network <network_alias>] \ # set a network to the container
     <image>[:<image_version>] \ # image name
     [<command>] # command to execute in the container
-
 docker ps [-a] [-q] # List docker processes
 docker start [-a] [-i] <container_id> # Start a container
 docker stop [-t <timeout_secs>] <container_id> # Stop a container
 docker rm  [-f] <container_id> # Delete a container
-docker container prune [-f] # Remove all unused containers
-docker container ls [-a] [-s] # List containers
 docker images # List local images
 docker rmi # Delete a image
 docker port <container_id> # Check port bindings of a container
@@ -35,11 +32,16 @@ docker login # Sign in docker hub
 docker logout # Sign out docker hub
 docker push <image_name> # Push a container to docker hub
 docker pull <image_name> # Pull a container from docker hub
+docker history <image_name> # Check layers of a image
+docker exec [-it] <container_id> <command> # Execute commands inside a container
+
+docker container prune [-f] # Remove all unused containers
+docker container ls [-a] [-s] # List containers
+
 docker network create --driver bridge [--attachable] <network_alias> # Create a new docker network
 docker network ls # List docker networks
 docker network inspect <network_alias> # Inspect a docker network
-docker exec [-it] <container_id> <command> # Execute commands inside a container
-docker history <image_name> # Check layers of a image
+
 docker volume ls # List docker volumes
 docker volume inspect <volume_name> # Inspect a docker volume
 docker volume rm <volume_name> # Delete a docker volume

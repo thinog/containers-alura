@@ -35,7 +35,7 @@ docker login # Sign in docker hub
 docker logout # Sign out docker hub
 docker push <image_name> # Push a container to docker hub
 docker pull <image_name> # Pull a container from docker hub
-docker network create --driver bridge <network_alias> # Create a new docker network
+docker network create --driver bridge [--attachable] <network_alias> # Create a new docker network
 docker network ls # List docker networks
 docker network inspect <network_alias> # Inspect a docker network
 docker exec [-it] <container_id> <command> # Execute commands inside a container

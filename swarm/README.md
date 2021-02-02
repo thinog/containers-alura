@@ -2,7 +2,7 @@
 Aplicação de conteúdo estudado em curso [Docker Swarm: Orquestrador de containers](https://cursos.alura.com.br/course/docker-swarm-cluster-container) da Alura.
 
 
-### Docker Machine
+## docker-machine
 ```bash
 docker-machine ls # List active docker-machine VMs 
 docker-machine create -d <vm_driver> <vm_name> # Create a new docker-machine VM
@@ -12,7 +12,7 @@ docker-machine ssh <vm_name> # Access a docker-machine VM by SSH
 docker-machine rm <vm_name> # Delete a docker-machine VM
 ```
 
-### Docker Swarm
+## docker
 ```bash
 docker swarm init [--force-new-cluster] --advertise-addr <swarm_manager_ip> # Create a new docker swarm cluster
 docker swarm join-token <node_type(worker|manager)> # Get the join token of a cluster

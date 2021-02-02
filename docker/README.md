@@ -1,8 +1,7 @@
 # Docker Alura
 Aplicação de conteúdo estudado em curso [Docker: Criando containers sem dor de cabeça](https://cursos.alura.com.br/course/docker-e-docker-compose) da Alura, e alguns conteúdos extra do Alura+.
 
-
-# Comandos aplicados em curso
+## docker
 ```bash
 docker run \ # Run a container
     [-it] \ # attach to container
@@ -46,7 +45,10 @@ docker volume ls # List docker volumes
 docker volume inspect <volume_name> # Inspect a docker volume
 docker volume rm <volume_name> # Delete a docker volume
 docker volume create <volume_name> # Create a new docker volume
+```
 
+## docker-compose
+```bash
 docker-compose build # Build services from a docker-compose file
 docker-compose up [-d] # Run services from a docker-compose file
 docker-compose ps # List active docker-compose containers

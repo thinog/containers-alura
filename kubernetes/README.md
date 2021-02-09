@@ -6,6 +6,8 @@ Aplicação de conteúdo estudado em cursos [Kubernetes: Pods, Services e Config
 kubectl get nodes
 kubectl get pods [--watch] [-o wide]
 kubectl get svc
+kubectl get configmap
+kubectl get all
 
 kubectl run <pod_name> --image=<image_name>[:<image_version>]
 
@@ -14,8 +16,11 @@ kubectl edit pod <pod_name>
 kubectl delete pod [<pod_name>] [--all]
 kubectl delete svc [<svc_name>] [--all]
 kubectl delete [-f <file_path>]
+kubectl delete pods,services,configmaps --all
 
 kubectl describe pod <pod_name>
+kubectl describe svc <svc_name>
+kubectl describe configmap <configmap_name>
 
 kubectl apply [-f <file_path>]
 

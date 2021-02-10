@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: news-system-deployment
 spec:
@@ -18,6 +18,19 @@ spec:
           envFrom:
             - configMapRef:
                 name: news-system-configmap
+          volumeMounts:
+            - name: images
+              mountPath: /var/www/html/uploads
+            - name: session
+              mountPath: /tmp
+      volumes:
+        - name: images
+          persistentVolumeClaim:
+            claimName: news-system-images-pvc
+        - name: session
+          persistentVolumeClaim:
+            claimName: news-system-session-pvc
   selector:
     matchLabels:
       app: news-system
+  serviceName: news-system-service

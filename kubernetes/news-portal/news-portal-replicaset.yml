@@ -1,11 +1,11 @@
 apiVersion: apps/v1
 kind: ReplicaSet
 metadata:
-  name: rs-news-portal
+  name: news-portal-replicaset
 spec:
   template:
     metadata:
-      name: news-portal
+      name: news-portal-pod
       labels:
         app: news-portal
     spec:
@@ -16,7 +16,7 @@ spec:
             - containerPort: 80
           envFrom:
             - configMapRef:
-                name: cm-news-portal
+                name: news-portal-configmap
   replicas: 3
   selector:
     matchLabels:

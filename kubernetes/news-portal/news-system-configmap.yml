@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: cm-news-system
+  name: news-system-configmap
 data:
   HOST_DB: svc-news-db:3306
   USER_DB: root

@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Pod
 metadata:
-  name: news-system
+  name: news-system-pod
   labels:
     app: news-system
 spec:
@@ -12,4 +12,4 @@ spec:
         - containerPort: 80
       envFrom:
         - configMapRef:
-            name: cm-news-system
+            name: news-system-configmap

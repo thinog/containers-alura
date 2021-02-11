@@ -3,15 +3,16 @@ Aplicação de conteúdo estudado em cursos [Kubernetes: Pods, Services e Config
 
 ## kubectl
 ```bash
-kubectl get nodes
-kubectl get pods [--watch] [-o wide]
-kubectl get svc
+kubectl get nodes [<node_name>]
+kubectl get pods [<pod_name>] [--watch] [-o wide] 
+kubectl get svc [<svc_name>]
 kubectl get all
-kubectl get configmaps
-kubectl get replicasets
-kubectl get deployments
-kubectl get pv
-kubectl get pvc
+kubectl get configmaps [<cm_name>]
+kubectl get replicasets [<rs_name>]
+kubectl get deployments [<deploy_name>]
+kubectl get pv [<pv_name>]
+kubectl get pvc [<pvc_name>]
+kubectl get hpa [<hpa_name>]
 
 kubectl run <pod_name> --image=<image_name>[:<image_version>]
 
@@ -20,11 +21,12 @@ kubectl edit pod <pod_name>
 kubectl delete pod [<pod_name>] [--all]
 kubectl delete svc [<svc_name>] [--all]
 kubectl delete [-f <file_path>]
-kubectl delete deployments,replicasets,pods,services,configmaps --all
+kubectl delete hpa,statefulsets,deployments,replicasets,pods,services,configmaps --all
 kubectl delete replicasets [<rs_name>] [--all]
 kubectl delete deployment [<deployment_name>] [--all]
 kubectl delete pv [<persistente_volume_name>] [--all]
 kubectl delete pvc [<persistent_volume_claim_name>] [--all]
+kubectl delete hpa [<hpa_name>] [--all]
 
 kubectl describe pod <pod_name>
 kubectl describe svc <svc_name>
@@ -33,6 +35,7 @@ kubectl describe replicasets rs_name>
 kubectl describe deployment <deployment_name>
 kubectl describe pv <persistente_volume_name>
 kubectl describe pvc <persistent_volume_claim_name>
+kubectl describe hpa <hpa_name>
 
 kubectl apply [-f <file_path>] [--record]
 
@@ -49,4 +52,6 @@ kubectl annotate deployment <deployment_name> kubernetes.io/change-cause="<chang
 ```bash
 minikube start --vm-driver=virtualbox
 minikube ssh
+minikube addons list
+minikube addons enable <addon_name>
 ``` 
